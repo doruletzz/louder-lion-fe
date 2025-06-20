@@ -27,10 +27,6 @@ const MediaUpload = () => {
     }
   };
 
-  useEffect(() => {
-    if (selectedFile) handleUpload();
-  }, [selectedFile, handleUpload]);
-
   // Handle file upload
   const handleUpload = async () => {
     if (!selectedFile) {
@@ -77,6 +73,10 @@ const MediaUpload = () => {
       console.error("Network error during upload:", error);
     }
   };
+
+  useEffect(() => {
+    if (selectedFile) handleUpload();
+  }, [selectedFile, handleUpload]);
 
   return (
     <>
