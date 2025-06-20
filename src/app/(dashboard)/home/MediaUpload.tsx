@@ -1,19 +1,19 @@
 "use client";
 
 import Button from "@/app/_components/Button";
-import { Loader, Loader2, Upload } from "lucide-react";
+import { Loader2, Upload } from "lucide-react";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 
 const MediaUpload = () => {
   const router = useRouter();
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [uploadStatus, setUploadStatus] = useState("");
-  const [audioPreviewUrl, setAudioPreviewUrl] = useState(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [uploadStatus, setUploadStatus] = useState<string | null>("");
+  const [audioPreviewUrl, setAudioPreviewUrl] = useState<string | null>(null);
 
   // Handle file selection
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
+  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
     if (file) {
       setSelectedFile(file);
       setUploadStatus(""); // Clear previous status
@@ -29,7 +29,7 @@ const MediaUpload = () => {
 
   useEffect(() => {
     if (selectedFile) handleUpload();
-  }, [selectedFile]);
+  }, [selectedFile, handleUpload]);
 
   // Handle file upload
   const handleUpload = async () => {

@@ -1,5 +1,5 @@
 import Button from "@/app/_components/Button";
-import { Mic, Upload } from "lucide-react";
+import { Mic } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import MediaUpload from "./MediaUpload";

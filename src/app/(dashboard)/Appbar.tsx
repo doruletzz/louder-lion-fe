@@ -3,7 +3,6 @@ import {
   House,
   CircleUser,
   Settings,
-  Notebook,
   MessageSquare,
   TrendingUpDown,
   Swords,
