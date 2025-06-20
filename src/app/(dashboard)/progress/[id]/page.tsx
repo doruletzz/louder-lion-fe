@@ -307,8 +307,9 @@ const ProgressPage = () => {
           </div>
         </span>
         <div className="grid grid-cols-2 gap-2 w-full max-w-2xl">
-          {STATUSES.map((status) => (
+          {STATUSES.map((status, i) => (
             <div
+              key={i}
               className={cn(
                 "border-blue-800/10 border rounded-3xl w-full h-full p-4 py-4 flex gap-2 items-center",
                 status.className
